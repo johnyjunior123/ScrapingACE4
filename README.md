@@ -4,7 +4,7 @@
 ![feito em python](https://img.shields.io/badge/Linguagem-Python-321)
 ![utilizado banco mysql](https://img.shields.io/badge/SGBD-MySQL-244)
 
-> Esse é um programa que tem como objetivo retirar de um site de noticias dados para serem utilizados para fins didaticos. Sendo seu escopo muito restrito a um conjunto pequeno de dados e localidade.
+> Esse é um programa que tem como objetivo retirar de um site de noticias, alguns dados com finalidade didatica. Sendo seu escopo muito restrito a um conjunto pequeno de dados e localidade.
 
 <h2>Primeiros passos</h2>
 
