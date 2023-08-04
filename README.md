@@ -20,6 +20,17 @@ Além disso é necessário a utilização de um SGBD para armazenar os dados rec
 
 [Baixar Schema](https://drive.google.com/file/d/1uS8QgsvJmK_qcSgdoWqDV3IomUJxpRdm/view?usp=sharing)
 
+> adicionar na pasta config, um arquivo mysql.py com a config de acesso com o banco de dados, exemplo:
+
+```
+    config = {
+    "user" : "root",
+    "password" : "qualqueruma",
+    "host" : "127.0.0.1",
+    "database" : "noticias"
+}
+```
+
 <h2>Utilizando o programa</h2>
 
 > No momento o programa não possuí GUI ou utilização de API, então a utilização é através do controller no arquivo app.py
