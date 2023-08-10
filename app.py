@@ -2,8 +2,6 @@ from src.models.conector import Conector
 from src.models.controller import Controller
 from src.banco.config import config
 
-conector = Conector(config)
-
-controller = Controller(conector)
+controller = Controller(Conector())
 
 controller.scrapingUma(105)

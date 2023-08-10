@@ -1,12 +1,15 @@
-import mysql.connector
-
+import psycopg2
 class Conector:
     
-    def __init__(self, config):
+    def __init__(self):
         try:
-            self.conexao = mysql.connector.connect(**config)
+            self.conexao = psycopg2.connect(
+            user="postgres",
+            password="demon123",
+            host="127.0.0.1",
+            database="noticias")
             print('Conexão com Sucesso')
-        except mysql.connector.Error as error:
+        except psycopg2.Error as error:
             print(error)
         
     def executarSQL(self, sql):
@@ -16,21 +19,9 @@ class Conector:
             self.conexao.commit()
             print(cursor.rowcount, '200 - Sucess')
             cursor.close()
-        except mysql.connector.Error as error:
+        except psycopg2.connector.Error as error:
             print(error)
 
     def encerrar(self):
         self.conexao.close()
         print('--- Encerrada com Sucesso - 200 ---')
-
-config = {
-    "user" : "johny",
-    "password" : "DeF1234*",
-    "host" : "127.0.0.1",
-    "database" : "noticias"
-}
-
-
-
-
-
