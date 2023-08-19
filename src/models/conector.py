@@ -1,13 +1,13 @@
 import psycopg2
 class Conector:
     
-    def __init__(self):
+    def __init__(self, banco):
         try:
             self.conexao = psycopg2.connect(
             user="postgres",
             password="demon123",
             host="127.0.0.1",
-            database="noticias")
+            database=banco)
             print('Conexão com Sucesso')
         except psycopg2.Error as error:
             print(error)
@@ -19,7 +19,7 @@ class Conector:
             self.conexao.commit()
             print(cursor.rowcount, '200 - Sucess')
             cursor.close()
-        except psycopg2.connector.Error as error:
+        except psycopg2.Error as error:
             print(error)
 
     def encerrar(self):

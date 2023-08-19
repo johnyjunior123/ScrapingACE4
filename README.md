@@ -2,7 +2,7 @@
 
 ![a versão atual do projeto é 1.0](https://img.shields.io/badge/Versão-1.0-279)
 ![feito em python](https://img.shields.io/badge/Linguagem-Python-321)
-![utilizado banco mysql](https://img.shields.io/badge/SGBD-MySQL-244)
+![utilizado postgree](https://img.shields.io/badge/SGBD-PostgreSQL-244)
 
 > Esse é um programa que tem como objetivo retirar de um site de noticias, alguns dados com finalidade didatica. Sendo seu escopo muito restrito a um conjunto pequeno de dados e localidade.
 
@@ -16,7 +16,6 @@ Primeiro será necessário a instalação das bibliotecas do python utilizado no
 
 Além disso é necessário a utilização de um SGBD para armazenar os dados recolhidos, o programa em especifico foi criado com especialização no MySQL caso não o possua:
 
-[Baixar MySQL](https://dev.mysql.com/downloads/)
 
 [Baixar Schema](https://drive.google.com/file/d/1uS8QgsvJmK_qcSgdoWqDV3IomUJxpRdm/view?usp=sharing)
 

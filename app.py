@@ -1,7 +1,6 @@
 from src.models.conector import Conector
 from src.models.controller import Controller
-from src.banco.config import config
 
-controller = Controller(Conector())
+controller = Controller(Conector("teste"))
 
-controller.scrapingUma(105)
+controller.aquiAcontece(6, 6)
