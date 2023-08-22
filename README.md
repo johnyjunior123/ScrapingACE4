@@ -39,7 +39,7 @@ conector = Conector(config)
 controller = Controller(conector)
 ~~~
 
-Sendo o atual alvo do scraping um site especifico, o controller possuirá duas funções
+Sendo o atual alvo do scraping um site especifico, o controller uma função
 
 
 `controller.aquiAcontece(argumento1, argumento2)`
