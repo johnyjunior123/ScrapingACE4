@@ -10,24 +10,19 @@
 
 Primeiro será necessário a instalação das bibliotecas do python utilizado no programa:
 
-```pip install bs4```
+```pip install -r requeriments.txt```
 
-```pip install urllib3```
+Além disso é necessário a utilização de um SGBD para armazenar os dados recolhidos, o programa em especifico foi criado com especialização no PostgreSQL caso não o possua:
 
-Além disso é necessário a utilização de um SGBD para armazenar os dados recolhidos, o programa em especifico foi criado com especialização no MySQL caso não o possua:
+[Baixar PostgreSQL](https://sbp.enterprisedb.com/getfile.jsp?fileid=1258649)
 
-
-[Baixar Schema](https://drive.google.com/file/d/1uS8QgsvJmK_qcSgdoWqDV3IomUJxpRdm/view?usp=sharing)
-
-> adicionar na pasta config, um arquivo mysql.py com a config de acesso com o banco de dados, exemplo:
+> alterar no conector as configurações de acesso com o banco de dados, exemplo:
 
 ```
-    config = {
-    "user" : "root",
-    "password" : "qualqueruma",
-    "host" : "127.0.0.1",
-    "database" : "noticias"
-}
+            user="postgres",
+            password="teste",
+            host="127.0.0.1",
+            database=banco
 ```
 
 <h2>Utilizando o programa</h2>
@@ -47,16 +42,12 @@ controller = Controller(conector)
 Sendo o atual alvo do scraping um site especifico, o controller possuirá duas funções
 
 
-`controller.scrapingTodas(argumento1, argumento2)`
+`controller.aquiAcontece(argumento1, argumento2)`
 
 Argumento 1 = Pagina Inicial (De onde a raspagem se iniciará)
 Argumento 2 = Pagina Final (Até que pagina será feito)
 
 Obs: A raspagem é feita de forma descrecente por exemplo: da pagina 302 à 102.
-
-`controller.scrapingUma(pagina)`
-
-pagina = numero da pagina para raspagem
 
 Ao final da raspagem, é criado um objeto Noticia e feito a adição das noticias no banco de dados de maneira a ficarem dessa maneira:
 
