@@ -1,5 +1,7 @@
 import sys 
-sys.path.insert(0, "C:\\Users\\GAMEPLAI\\Documents\\Faculdade\\ACE4\\ScrapingACE4")
+index = sys.path[0].split('\\').index('ScrapingACE4')
+path = "\\".join(sys.path[0].split('\\')[0:index+1])
+sys.path.insert(0, path)
 
 from src.requisicao import requisicao
 from src.buscaNoticia import buscarAquiAcontece
