@@ -1,6 +1,6 @@
 #retorna um dicionario com a data e descricao da noticia
 
-from src.parse.parseDate import parseStringForDate
+from src.parse.parseDate import parseStringForDateAquiAcontece, parseStringForDateDiarioPenedense
 from src.models.noticia import Noticia
 
 def buscarAquiAcontece(soup):
@@ -10,11 +10,25 @@ def buscarAquiAcontece(soup):
     textoNoticia = ''
     for item in texto.findAll('p'):
         textoNoticia += item.text
-    return criarNoticia(data, textoNoticia)
+    return criarNoticiaAquiAcontece(data, textoNoticia)
 
-def criarNoticia(dateTime, descricao):
-    dateTime = parseStringForDate(dateTime)
+def buscarDiarioPenedense(soup):
+    data = soup.find('span', class_= "date meta-item tie-icon")
+    data = data.text
+    texto = soup.find('div', class_="entry-content entry clearfix")
+    textoNoticia = ''
+    for item in texto.findAll('p'):
+        textoNoticia += item.text
+    return criarNoticiaDiarioPenedense(data, textoNoticia)
+
+def criarNoticiaAquiAcontece(dateTime, descricao):
+    dateTime = parseStringForDateAquiAcontece(dateTime)
     noticia = Noticia(dateTime[0], dateTime[1], descricao)
+    return noticia
+
+def criarNoticiaDiarioPenedense(dateTime, descricao):
+    dateTime = parseStringForDateDiarioPenedense(dateTime)
+    noticia = Noticia(data=dateTime[0], descricao=descricao)
     return noticia
 
 def imprimirNoticia(noticia):

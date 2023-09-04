@@ -11,3 +11,4 @@ def requisicao(url):
 
 def transformarEmSoup(html):
     return BeautifulSoup(html, 'html.parser')
+    
